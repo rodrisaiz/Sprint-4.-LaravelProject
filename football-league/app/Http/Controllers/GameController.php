@@ -11,7 +11,8 @@ class GameController extends Controller
      */
     public function index()
     {
-        //
+        $teams = Team::get();
+        return view('home', ['teams' => $teams]);
     }
 
     /**

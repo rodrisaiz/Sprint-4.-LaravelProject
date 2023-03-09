@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TeamController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [TeamController::class, 'index'])->name('home');
+
+
+
+
+
+Route::view('/team','/team/team')->name('team');
+Route::view('/teamcreate','/team/createTeam')->name('createteam');
+
+Route::view('/matches','/match/matches')->name('matches');
+Route::view('/match','/match/match')->name('match');
+Route::view('/matchcreate','/match/createMatch')->name('creatematch');
+
+
+/*
 Route::get('/', function () {
     return view('home');
 });
+*/

@@ -3,15 +3,18 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 
 class TeamController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        //
+        $teams = DB::table('teams')->get();
+        //$teams = Team::get();
+        return view('home', ['teams' => $teams]);
+        
     }
 
     /**
