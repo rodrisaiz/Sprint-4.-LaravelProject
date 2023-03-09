@@ -15,12 +15,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [TeamController::class, 'index'])->name('home');
+Route::get('/team/{id}',[TeamController::class, 'show'])->name('team');
 
 
 
-
-
-Route::view('/team','/team/team')->name('team');
 Route::view('/teamcreate','/team/createTeam')->name('createteam');
 
 Route::view('/matches','/match/matches')->name('matches');
