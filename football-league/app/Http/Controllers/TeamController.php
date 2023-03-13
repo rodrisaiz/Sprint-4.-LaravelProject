@@ -21,7 +21,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        //
+        return  view('/team/createTeam');
     }
 
     /**
@@ -29,7 +29,30 @@ class TeamController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'team_name' => 'required',
+            'team_dt' => 'required',
+            'team_stadium' => 'required',
+            'team_img' => 'required|mimes:jpg,png,jpeg|max:5048'
+
+
+        ]);
+
+        $newImageName = time() . '-' . $request->team_name . '.' . $request->team_img->extension();
+
+       $request->team_img->move(public_path('images'), $newImageName);
+
+        $team = new Team;
+
+        $team->name = $request->input('team_name');
+        $team->dt = $request->input('team_dt');
+        $team->stadium = $request->input('team_stadium');
+        $team->img_path = $newImageName;
+
+        $team->save();
+
+        return  to_route('home');
+
     }
 
     /**
