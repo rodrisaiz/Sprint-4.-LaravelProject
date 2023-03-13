@@ -85,7 +85,8 @@
           <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
           <figcaption class="flex items-center justify-center space-x-3">
               <h3 class="text-2xl text-center font-semibold text-gray-900 dark:text-white">{{$team->name}} </h3>   
-              <img class="rounded-full w-12 h-12" src= "{{$team->img}}" alt="profile picture">
+              <img class="rounded-full w-12 h-12" src= "{{ asset('images/'. $team->img_path) }}">
+              
           </figcaption>    
           </blockquote>
 
