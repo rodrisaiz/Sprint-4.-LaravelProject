@@ -20,6 +20,7 @@ Route::post('/team',[TeamController::class, 'store'])->name('storeteam');
 Route::get('/team/{id}',[TeamController::class, 'show'])->name('team');
 Route::get('/team/{id}/edit',[TeamController::class, 'edit'])->name('edit_team');
 Route::patch('/team/{team}',[TeamController::class, 'update'])->name('updateteam');
+Route::get('/team/{team}/delete',[TeamController::class, 'destroy'])->name('deleteteam');
 
 
 
