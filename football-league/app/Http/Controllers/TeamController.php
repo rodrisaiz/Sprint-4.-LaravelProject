@@ -35,7 +35,6 @@ class TeamController extends Controller
             'team_stadium' => 'required',
             'team_img' => 'required|mimes:jpg,png,jpeg|max:5048'
 
-
         ]);
 
         $newImageName = time() . '-' . $request->team_name . '.' . $request->team_img->extension();
@@ -66,17 +65,48 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Team $id)
     {
-        //
+        return view('team.edit',['team'=> $id]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Team $team)
     {
-        //
+
+        $request->validate([
+            'team_name' => 'required',
+            'team_dt' => 'required',
+            'team_stadium' => 'required',
+            'team_img' => 'mimes:jpg,png,jpeg|max:5048'
+
+
+        ]);
+
+        if($request->team_img){
+
+            $newImageName = time() . '-' . $request->team_name . '.' . $request->team_img->extension();
+
+            $request->team_img->move(public_path('images'), $newImageName);
+        
+        }else{
+
+            $newImageName = $team->img_path;
+        }
+
+      
+
+        $team->name = $request->input('team_name');
+        $team->dt = $request->input('team_dt');
+        $team->stadium = $request->input('team_stadium');
+        $team->img_path = $newImageName;
+
+        $team->save();
+
+        return  to_route('home');
+
     }
 
     /**
