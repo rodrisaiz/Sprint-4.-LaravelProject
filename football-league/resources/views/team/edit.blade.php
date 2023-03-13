@@ -9,7 +9,7 @@
 
 
 
-<div class="bg-black h-screen">
+<div class="bg-black  h-screen">
 
 <!-- cabecera -->
 
@@ -22,7 +22,7 @@
 
 <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
 
-<h3 class="text-5xl font-semibold text-gray-900 dark:text-white">Create team</h3>
+<h3 class="text-5xl font-semibold text-gray-900 dark:text-white">Edit team</h3>
 
 </blockquote>
 </div>
@@ -30,30 +30,31 @@
 <!-- form -->
 
 
-<form action="{{route('storeteam')}}" method="POST" enctype="multipart/form-data">
-  @csrf
+<form action="{{route('updateteam', $team)}}" method="POST" enctype="multipart/form-data">
+  @csrf @method('PATCH')
+
   <div class="grid md:grid-cols-1 mx-96  mt-24 md:gap-6">
     <div class="relative z-0 w-full mb-6 group">
-        <input type="text" name="team_name" id="team_name" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        <input type="text" name="team_name" id="team_name" value="{{old('team_name', $team->name)}}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
         <label for="team_name" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Team name</label>
     </div>
 
     <div class="relative z-0 w-full mb-6 group">
-        <input type="text" name="team_dt" id="team_dt" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        <input type="text" name="team_dt" id="team_dt" value="{{old('team_dt', $team->dt)}}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
         <label for="team_dt" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Coach</label>
     </div>
   </div>
 
   <div class="grid md:grid-cols-1 mx-96  md:gap-6">
     <div class="relative z-0 w-full mb-6 group">
-        <input type="text" name="team_stadium" id="team_stadium" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
+        <input type="text" name="team_stadium" id="team_stadium" value="{{old('team_stadium', $team->stadium)}}" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-gray-400 dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
         <label for="team_stadium" class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Stadium</label>
     </div>
 
     <div class="relative z-0 w-full mb-6 group ">
 
         <label class="block mb-2 font-medium text-sm text-gray-500 dark:text-gray-400" for="">Team crest</label>
-        <input class="block w-full font-medium text-sm text-gray-500 dark:text-gray-400 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  name="team_img"  id="team_img" type="file">
+        <input value="{{old('team_img', $team->img_path)}}" class="block w-full font-medium text-sm text-gray-500 dark:text-gray-400 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"  name="team_img"  id="team_img" type="file">
         <p class="mt-2 text-sm text-gray-500 dark:text-gray-400" id="file_input_help">Recommended: PNG (without background).</p>
 
             
@@ -62,8 +63,11 @@
   </div>
 
   <div class="grid md:grid-cols-2 mx-96 mt-24 md:gap-6">
-  <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Submit</button>
+    <a href="{{route('home')}}" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Cancel</a>
+    <button type="submit" class="text-white bg-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800">Submit</button>
   </div>
+
+
 </form>
 
 

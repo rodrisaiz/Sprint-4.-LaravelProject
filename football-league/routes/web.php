@@ -15,13 +15,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [TeamController::class, 'index'])->name('home');
+Route::get('/team/createTeam',[TeamController::class, 'create'])->name('createteam');
+Route::post('/team',[TeamController::class, 'store'])->name('storeteam');
+Route::get('/team/{id}',[TeamController::class, 'show'])->name('team');
+Route::get('/team/{id}/edit',[TeamController::class, 'edit'])->name('edit_team');
+Route::patch('/team/{team}',[TeamController::class, 'update'])->name('updateteam');
+Route::get('/team/{team}/delete',[TeamController::class, 'destroy'])->name('deleteteam');
 
 
 
-
-
-Route::view('/team','/team/team')->name('team');
-Route::view('/teamcreate','/team/createTeam')->name('createteam');
 
 Route::view('/matches','/match/matches')->name('matches');
 Route::view('/match','/match/match')->name('match');
