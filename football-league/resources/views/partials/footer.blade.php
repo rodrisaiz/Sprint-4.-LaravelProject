@@ -5,7 +5,7 @@
 
     <div class="grid grid-cols-1  md:grid-cols-1">
 
-    <div class="flex justify-center sm:items-center sm:justify-between bg-black ">
+    <div class="flex justify-center sm:items-center mt-12 sm:justify-between bg-black ">
                     <div class="text-center text-sm text-gray-500 dark:text-gray-400 sm:text-left">
                         <div class="flex items-center gap-4">
                             <a href="https://github.com/rodrisaiz" class="group inline-flex items-center hover:text-gray-700 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-gray-500">
