@@ -12,6 +12,7 @@
 
 <div class="bg-black ">
 
+
 <!-- cabecera -->
 @include('partials.nav')
 

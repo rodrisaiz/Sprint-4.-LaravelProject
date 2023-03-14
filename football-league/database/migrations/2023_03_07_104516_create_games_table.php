@@ -15,10 +15,10 @@ return new class extends Migration
 
             $table->id();
             $table->foreignId('Team1_id')->references('id')->on('teams')->onDelete('cascade');
-            $table->integer('goals_Team1');
+            $table->integer('goals_Team1')->nullable();
             $table->foreignId('Team2_id')->references('id')->on('teams')->onDelete('cascade');
-            $table->integer('goals_Team2');
-            $table->string('stadium')->references('stadium')->on('teams');
+            $table->integer('goals_Team2')->nullable();
+            $table->string('stadium');
             $table->date('date')->nullable();
             $table->time('time')->nullable();
             $table->timestamps();

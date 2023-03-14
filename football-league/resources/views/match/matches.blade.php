@@ -45,7 +45,7 @@
           <div class="flex flex-col justify-between p-4 leading-normal">
           <h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">{{$game->team1->name}}</h5>
          
-          <p class="mb-3 font-normal  text-center text-gray-700 dark:text-gray-400">{{$game->team1->dt}}</p>
+          <p class="mb-3 font-normal  text-center text-gray-700 dark:text-gray-400">HC : {{$game->team1->dt}}</p>
           
           </div>
           
@@ -56,7 +56,7 @@
        
           <div class="flex flex-col justify-between p-4 leading-normal">
           <h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">{{$game->team2->name}}</h5>
-          <p class="mb-3 font-normal  text-center text-gray-700 dark:text-gray-400">{{$game->team2->dt}}</p>
+          <p class="mb-3 font-normal  text-center text-gray-700 dark:text-gray-400">HC : {{$game->team2->dt}}</p>
           </div>
           <img class="rounded-full  m-4  w-12 h-12" src= "{{ asset('images/'. $game->team2->img_path) }}">
          
@@ -106,7 +106,7 @@
    
     <a href="{{route('createteam')}}" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Create a team</a>
 
-    <a href="{{route('createteam')}}" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Create a match</a>
+    <a href="{{route('creatematch')}}" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Create a match</a>
   
   </div>
 </div>

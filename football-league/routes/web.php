@@ -24,6 +24,8 @@ Route::patch('/team/{team}',[TeamController::class, 'update'])->name('updateteam
 Route::get('/team/{team}/delete',[TeamController::class, 'destroy'])->name('deleteteam');
 
 Route::get('/match', [GameController::class, 'index'])->name('matches');
+Route::get('/match/createMatch',[GameController::class, 'create'])->name('creatematch');
+Route::post('/match',[GameController::class, 'store'])->name('storematch');
 
 /*
 Route::get('/', function () {
