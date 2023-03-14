@@ -19,8 +19,8 @@ return new class extends Migration
             $table->foreignId('Team2_id')->references('id')->on('teams')->onDelete('cascade');
             $table->integer('goals_Team2');
             $table->string('stadium')->references('stadium')->on('teams');
-            $table->date('date');
-            $table->time('time');
+            $table->date('date')->nullable();
+            $table->time('time')->nullable();
             $table->timestamps();
         });
     }
