@@ -10,7 +10,7 @@
 
 
 
-<div class="bg-black h-screen">
+<div class="bg-black ">
 
 <!-- cabecera -->
 @include('partials.nav')
@@ -32,51 +32,6 @@
 <!-- equipos -->
 
 <div class="grid border border-black  shadow-sm dark:border-black  md:grid-cols-2">
-
-<!-- @foreach($teams as $team)
-<figure class="flex flex-col items-center justify-center p-8 text-center bg-black border border-gray-200 md:border dark:bg-black dark:border-gray-500">
-      <a href='team/{{$team->id}}'>
-        <blockquote class="max-w-2xl mx-auto mb-4 text-gray-500 lg:mb-8 dark:text-gray-400">
-            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{$team->name}}</h3>
-            <p class="my-4 font-light">{{$team->dt}}"</p>
-        </blockquote>
-
-        <figcaption class="flex items-center justify-center space-x-3">
-            <img class="rounded-full w-9 h-9" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/karen-nelson.png" alt="profile picture">
-            <div class="space-y-0.5 font-medium dark:text-white text-left">
-                <div>{{$team->stadium}}</div>
-                <div class="text-sm font-light text-gray-500 dark:text-gray-400">Developer at Open AI</div>
-            </div>
-        </figcaption>    
-        </a>
-        </figure>
-@endforeach  -->
-
-
-  <!-- prueba -->
-  <!-- @foreach($teams as $team)
-  <figure class="flex flex-col items-center justify-center p-8 text-center bg-black border border-gray-200 md:border dark:bg-black dark:border-gray-500">  
-  <a href="team/{{$team->id}}">
-    
-
-        <figcaption class="flex items-center justify-center space-x-3">
-
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{{$team->name}} </h3>   
-            <img class="rounded-full w-9 h-9" src= "{{$team->img}}" alt="profile picture">
-        </figcaption>    
-        
-        <figcaption class="flex items-center justify-center space-x-3">
-           <div class="space-y-0.5 font-medium dark:text-white text-center">
-                <div>Coach: {{$team->dt}}</div>
-                <div class="text-sm font-light text-gray-500 dark:text-gray-400">Stadium : {{$team->stadium}}</div>
-            </div>
-        </figcaption>  
-         
-        </a>
-
-        </figure>
-   @endforeach -->
-          <!-- prueba 2 -->
 
   @foreach($teams as $team)
   <figure class="flex flex-col items-center justify-center p-8 text-center bg-black border border-gray-200 md:border dark:bg-black dark:border-gray-500">
@@ -112,7 +67,7 @@
    
     <a href="{{route('createteam')}}" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Create a team</a>
 
-    <a href="{{route('creatematch')}}" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Create a match</a>
+    <a href="{{route('createteam')}}" type="button" class="text-white bg-gray-800 hover:bg-gray-900 focus:outline-none focus:ring-4 focus:ring-gray-300 font-medium rounded-full text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700">Create a match</a>
   
   </div>
 </div>

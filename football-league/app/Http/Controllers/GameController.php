@@ -3,16 +3,17 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\Game;
+
 
 class GameController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
+
     public function index()
     {
-        $teams = Team::get();
-        return view('home', ['teams' => $teams]);
+        return view('/match/matches', ['games' => Game::get()]);
+        
     }
 
     /**
