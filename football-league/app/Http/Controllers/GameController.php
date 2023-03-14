@@ -65,11 +65,10 @@ class GameController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Game $id)
     {
-        //
+        return view('match.show',['game'=> $id]);
     }
-
     /**
      * Show the form for editing the specified resource.
      */

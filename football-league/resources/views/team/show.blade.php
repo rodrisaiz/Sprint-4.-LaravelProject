@@ -62,7 +62,7 @@
       <a href="{{route('deleteteam', $team)}}" type="button" class="text-white bg-red-500 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-500 dark:hover:bg-red-800 dark:focus:ring-red-900">Delete</a>
     </form>
 
-    <a href="{{route('edit_team', $team->id)}}" type="button" class="text-white bg-blue-500 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-500 dark:hover:bg-blue-800 dark:focus:ring-blue-900">Modify</a>
+    <a href="{{route('edit_team', $team->id)}}"d type="button" class="text-white bg-blue-500 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-500 dark:hover:bg-blue-800 dark:focus:ring-blue-900">Modify</a>
   </div>
 </div>
 

@@ -36,7 +36,7 @@
   @foreach($games as $game)
 
  
-    <a href="#" class="flex flex-col items-center  place-content-center bg-white border border-gray-200 rounded-lg shadow md:flex-row  md:grid bg-black border border-gray-200 md:border dark:bg-black dark:border-gray-500">
+    <a href="match/{{$game->id}}" class="flex flex-col items-center  place-content-center bg-white border border-gray-200 rounded-lg shadow md:flex-row  md:grid bg-black border border-gray-200 md:border dark:bg-black dark:border-gray-500">
       
       <div  class="flex flex-row items-center md:flex-row">
           
@@ -46,6 +46,8 @@
           <h5 class="mb-2 text-2xl text-center font-bold tracking-tight text-gray-900 dark:text-white">{{$game->team1->name}}</h5>
          
           <p class="mb-3 font-normal  text-center text-gray-700 dark:text-gray-400">HC : {{$game->team1->dt}}</p>
+
+         
           
           </div>
           
