@@ -4,16 +4,6 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\GameController;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
 Route::get('/', [TeamController::class, 'index'])->name('home');
 Route::get('/team/createTeam',[TeamController::class, 'create'])->name('createteam');
@@ -31,13 +21,4 @@ Route::patch('/match/{game}',[GameController::class, 'update'])->name('updatemat
 Route::get('/match/{game}/delete',[GameController::class, 'destroy'])->name('deletematch');
 
 
-
-
-
-
-
-/*
-Route::get('/', function () {
-    return view('home');
-});
-*/
+    

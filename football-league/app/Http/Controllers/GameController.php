@@ -17,19 +17,12 @@ class GameController extends Controller
         
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         return view('/match/createMatch', ['teams' => Team::get()]);
         
     }
 
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
         $request->validate([
@@ -61,26 +54,17 @@ class GameController extends Controller
 
     }
 
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Game $id)
     {
         return view('match.show',['game'=> $id]);
     }
-    /**
-     * Show the form for editing the specified resource.
-     */
-
+   
     public function edit(Game $id)
     {
         return view('match.edit',['game' =>  $id]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+
     public function update(Request $request, Game $game)
     {
 
@@ -107,9 +91,7 @@ class GameController extends Controller
 
         return  to_route('matches');
     }
-    /**
-     * Remove the specified resource from storage.
-     */
+    
     public function destroy(Game $game)
     {
         $game->delete();
