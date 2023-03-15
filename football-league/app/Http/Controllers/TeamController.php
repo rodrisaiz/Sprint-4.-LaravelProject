@@ -16,17 +16,13 @@ class TeamController extends Controller
         
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
+    
     public function create()
     {
         return  view('/team/createTeam');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
     public function store(Request $request)
     {
         $request->validate([
@@ -54,25 +50,19 @@ class TeamController extends Controller
 
     }
 
-    /**
-     * Display the specified resource.
-     */
+    
     public function show(Team $id)
     {
         return view('team.show',['team'=> $id]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
+    
     public function edit(Team $id)
     {
         return view('team.edit',['team'=> $id]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, Team $team)
     {
 
@@ -109,9 +99,7 @@ class TeamController extends Controller
 
     }
 
-    /**
-     * Remove the specified resource from storage.
-     */
+    
     public function destroy(Team $team)
     {
         $team->delete();
