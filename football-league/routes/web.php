@@ -22,18 +22,15 @@ Route::get('/team/{id}',[TeamController::class, 'show'])->name('team');
 Route::get('/team/{id}/edit',[TeamController::class, 'edit'])->name('edit_team');
 Route::patch('/team/{team}',[TeamController::class, 'update'])->name('updateteam');
 Route::get('/team/{team}/delete',[TeamController::class, 'destroy'])->name('deleteteam');
-
 Route::get('/match', [GameController::class, 'index'])->name('matches');
 Route::get('/match/createMatch',[GameController::class, 'create'])->name('creatematch');
 Route::post('/match',[GameController::class, 'store'])->name('storematch');
 Route::get('/match/{id}',[GameController::class, 'show'])->name('match');
 Route::get('/match/{id}/edit',[GameController::class, 'edit'])->name('editmatch');
 Route::patch('/match/{game}',[GameController::class, 'update'])->name('updatematch');
+Route::get('/match/{game}/delete',[GameController::class, 'destroy'])->name('deletematch');
 
 
-
-
-Route::get('/match/{match}/delete',[TeamController::class, 'destroy'])->name('deletematch');
 
 
 
