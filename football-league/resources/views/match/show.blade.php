@@ -101,6 +101,11 @@
       <a href="{{route('deletematch', $game)}}" type="button" class="text-white bg-red-500 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-red-500 dark:hover:bg-red-800 dark:focus:ring-red-900">Delete</a>
     </form>
 
+    <form>
+      
+      <a href="{{route('matches')}}" type="button" class="text-white bg-red-500 hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-red-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-gray-500 dark:hover:bg-gray-800 dark:focus:ring-gray-900">Cancel</a>
+    </form>
+
     <a href="{{route('editmatch', $game->id)}}" type="button" class="text-white bg-blue-500 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:bg-blue-500 dark:hover:bg-blue-800 dark:focus:ring-blue-900">Modify</a>
   </div>
 </div>
