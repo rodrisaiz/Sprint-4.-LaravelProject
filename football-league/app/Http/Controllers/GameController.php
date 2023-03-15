@@ -72,19 +72,41 @@ class GameController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+
+    public function edit(Game $id)
     {
-        //
+        return view('match.edit',['game' =>  $id]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Game $game)
     {
-        //
-    }
 
+        $request->validate([
+
+            'goalsteam1' => 'numeric',
+            'goalsteam2' => 'numeric',
+            'matchstadium' => 'required',
+
+
+        ]);
+
+
+        
+        $game->Team1_id = $game->Team1_id;
+        $game->goals_Team1 = $request->input('goalsteam1');
+        $game->Team2_id = $game->Team2_id;
+        $game->goals_Team2 = $request->input('goalsteam2');
+        $game->stadium = $request->input('matchstadium');
+        $game->date = $request->input('matchdate');
+        $game->time = $request->input('matchtime');
+
+        $game->save();
+
+        return  to_route('matches');
+    }
     /**
      * Remove the specified resource from storage.
      */

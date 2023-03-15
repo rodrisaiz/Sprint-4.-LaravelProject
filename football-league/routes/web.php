@@ -27,9 +27,12 @@ Route::get('/match', [GameController::class, 'index'])->name('matches');
 Route::get('/match/createMatch',[GameController::class, 'create'])->name('creatematch');
 Route::post('/match',[GameController::class, 'store'])->name('storematch');
 Route::get('/match/{id}',[GameController::class, 'show'])->name('match');
+Route::get('/match/{id}/edit',[GameController::class, 'edit'])->name('editmatch');
+Route::patch('/match/{game}',[GameController::class, 'update'])->name('updatematch');
 
 
-Route::patch('/match/{match}',[TeamController::class, 'update'])->name('updatematch');
+
+
 Route::get('/match/{match}/delete',[TeamController::class, 'destroy'])->name('deletematch');
 
 
