@@ -11,4 +11,12 @@ class Team extends Model
 
     protected $guarded = [];
 
+    public function games()
+    {
+
+        return $this->hasMany(Game::class);
+
+
+    }
+
 }
